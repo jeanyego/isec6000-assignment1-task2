@@ -4,7 +4,7 @@ services:
   api:
     image: ghcr.io/saleor/saleor:3.15.4
     ports:
-      - 8000:8000
+      - 3009:8000
     restart: unless-stopped
     networks:
       - saleor-backend-tier
@@ -28,9 +28,9 @@ services:
   dashboard:
     image: ghcr.io/saleor/saleor-dashboard:3.15.2
     ports:
-      - 9000:80
+      - 9003:80 #change to 9003 from 9000
     restart: unless-stopped
-
+   
   db:
     image: library/postgres:13-alpine
     ports:
